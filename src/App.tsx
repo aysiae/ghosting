@@ -1,11 +1,9 @@
 import React from 'react';
-import { Sidebar } from './components/sidebar/Sidebar';
+import { TimelinePage } from './pages/timeline/TimelinePage';
 
 function App() {
   return (
-    <div className="App">
-      <Sidebar />
-    </div>
+    <TimelinePage />
   );
 }
 
