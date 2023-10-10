@@ -2,6 +2,7 @@
     max-width: 300px;
     background-color: black;
     height: 100vh;
+    color: white;
 }
 
 #title {
@@ -13,4 +14,24 @@
 #nav {
     display: flex;
     flex-direction: column;
+}
+
+#curr-profile {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2em;
+    margin-bottom: 2em;
+    position: absolute;
+    bottom: 0;
+
+    #profile-sidebar {
+        display: flex;
+        flex-direction: column;
+
+        p {
+            margin-top: 0;
+            margin-bottom: -0;
+            margin-left: 1em;
+        }
+    }
 }

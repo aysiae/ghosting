@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles';
 import Button, { ButtonProps } from '@mui/material/Button';
 import { deepPurple } from '@mui/material/colors';
+import Avatar from '@mui/material/Avatar';
 
 import './Sidebar.scss';
 const logo = require('../../assets/ghost.png');
@@ -8,10 +9,10 @@ const logo = require('../../assets/ghost.png');
 
 const NavButton = styled(Button)<ButtonProps>(({ theme }) => ({
     color: theme.palette.getContrastText(deepPurple[300]),
-    backgroundColor: deepPurple[300],
+    backgroundColor: 'black',
     borderRadius: 0,
     '&:hover': {
-      backgroundColor: deepPurple[400],
+      backgroundColor: deepPurple[300],
     },
   }));
 
@@ -44,7 +45,11 @@ export function Sidebar() {
                 <PostButton>Boo</PostButton>
             </div>
             <div id='curr-profile'>
-
+                <Avatar>{'HV'}</Avatar>
+                <div id='profile-sidebar'>
+                    <p>Hera Varela</p>
+                    <p>@stardustHera</p>
+                </div>
             </div>
         </div>
     )
