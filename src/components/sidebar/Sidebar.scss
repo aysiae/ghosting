@@ -1,0 +1,16 @@
+.sidebar-container {
+    max-width: 300px;
+    background-color: black;
+    height: 100vh;
+}
+
+#title {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+#nav {
+    display: flex;
+    flex-direction: column;
+}
