@@ -40,7 +40,6 @@ export function Sidebar() {
                 <NavButton>Explore</NavButton>
                 <NavButton>Notifications</NavButton>
                 <NavButton>Messages</NavButton>
-                <NavButton>Switch Profiles</NavButton>
                 <NavButton>Account</NavButton>
                 <PostButton>Boo</PostButton>
             </div>
