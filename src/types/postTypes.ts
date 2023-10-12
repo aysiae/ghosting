@@ -1,4 +1,4 @@
-export type Post = {
+export type post = {
     name: string,
     username: string,
     body: string,
@@ -6,5 +6,5 @@ export type Post = {
     avatar: string,
     likes?: number,
     reposts?: number,
-    responses?: Post[],
+    responses?: post[],
 }

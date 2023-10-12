@@ -1,8 +1,9 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Post } from '../../types/postTypes';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { post } from '../../types/postTypes';
+import { mockTimelineData } from '../../mockData/mockTimeLineData';
 
 export interface TimelinePosts {
-	posts: Post[]
+	posts: post[]
 }
 
 interface TimelineState {
@@ -19,14 +20,11 @@ export const TimelineSlice = createSlice({
 	name: 'timelinePosts',
 	initialState,
 	reducers: {
-		// toggleDarkMode: (state, action: PayloadAction) => {
-		// 	state.interfaceColor.darkMode = !state.interfaceColor.darkMode;
-		// },
-		// toggleUnicornMode: (state, action: PayloadAction) => {
-		// 	state.interfaceColor.unicornMode = !state.interfaceColor.unicornMode;
-		// },
+		getPosts: (state, action: PayloadAction) => {
+			state.timeline.posts = mockTimelineData;
+		},
 	},
 });
 
 export default TimelineSlice;
-// export const { toggleDarkMode, toggleUnicornMode } = ColorModeSlice.actions;
+export const { getPosts } = TimelineSlice.actions;
