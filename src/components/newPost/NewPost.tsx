@@ -51,11 +51,12 @@ export function NewPost() {
             display: 'flex', 
             flexDirection: 'row', 
             width: '700px', 
-            margin: '2em',
+            padding: '2em',
             color: 'white',
+            borderBottom: '1px grey solid',
             }}>
             <div>
-                <Avatar>HV</Avatar>
+                <Avatar sx={{marginTop: '0.5em'}}>HV</Avatar>
             </div>
             <div style={{
                 width: '75%', 
