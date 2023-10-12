@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { post } from '../../types/postTypes';
+import { PostType } from '../../types/postTypes';
 import { mockTimelineData } from '../../mockData/mockTimeLineData';
 
 export interface TimelinePosts {
-	posts: post[]
+	posts: PostType[]
 }
 
 interface TimelineState {

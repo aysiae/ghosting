@@ -1,10 +1,10 @@
-export type post = {
+export type PostType = {
     name: string,
     username: string,
     body: string,
-    date: Date,
+    date?: string,
     avatar: string,
     likes?: number,
     reposts?: number,
-    responses?: post[],
+    responses?: PostType[],
 }

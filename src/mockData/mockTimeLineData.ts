@@ -1,19 +1,19 @@
-import { post } from "../types/postTypes";
+import { PostType } from "../types/postTypes";
 
-const heraTweets : post = {
+const heraTweets : PostType = {
     name: 'Hera Varela',
     username: 'StardustHera',
     avatar: 'HV',
     body: 'I want ice cream T_T',
-    date: new Date(),
+    date: 'October 12, 2023',
 }
 
-const valkyrieTweet : post = {
+const valkyrieTweet : PostType = {
     name: 'Valkyrie',
     username: 'coquetteharpy',
     avatar: 'V',
     body: 'EL OH EL IM IRRITATED',
-    date: new Date(),
+    date: 'October 10, 2023',
 }
 
 export const mockTimelineData = [heraTweets, valkyrieTweet];

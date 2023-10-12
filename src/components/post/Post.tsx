@@ -1,16 +1,23 @@
 import { Avatar } from "@mui/material"
+import { PostType } from "../../types/postTypes"
 
-export function Post() {
+type PostProps = {
+    post: PostType
+}
+
+export function Post({ post }: PostProps) {
     return (
         <div>
             <div>
-            <Avatar>HV</Avatar>
+            <Avatar>{post.avatar}</Avatar>
             <div>
-                <p>Hera Varela</p>
-                <p>@StardustHera</p>
+                <p>{post.name}</p>
+                <p>@{post.username}</p>
             </div>
             </div>
-
+            <div>
+                {post.body}
+            </div>
         </div>
     )
 }
