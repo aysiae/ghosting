@@ -4,7 +4,6 @@
     background-color: black;
     height: 100vh;
     color: white;
-    border-right: 0.5px grey solid;
 }
 
 #title {
@@ -23,7 +22,7 @@
     flex-direction: row;
     margin-left: 2em;
     margin-bottom: 2em;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 
     #profile-sidebar {

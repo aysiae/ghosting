@@ -16,8 +16,11 @@ export function Timeline() {
     }, [dispatch, posts])
 
     return (
-        <div className='timeline' style={{borderRight: '1px grey solid'}}>
+        <div className='timeline' style={{borderRight: '1px grey solid', borderLeft: '1px grey solid'}}>
             <NewPost />
+            <div style={{color: 'white', textAlign: 'center', position: 'sticky'}}>
+                <h2>What's Spooking?</h2>
+            </div>
             {posts.map(post => {
                 return (
                     <Post post={post} />
