@@ -32,7 +32,11 @@ export function Post({ post }: PostProps) {
             display: 'flex',
             borderBottom: '1px gray solid',
         }}>
-            <Avatar sx={{marginTop: '1em', marginRight: '1em'}}>{post.avatar}</Avatar>
+            <Avatar sx={
+                {marginTop: '1em', 
+                marginRight: '1em'}}>
+                {post.avatar}
+            </Avatar>
             <div>
                 <div  style={{
                     display: 'flex',
