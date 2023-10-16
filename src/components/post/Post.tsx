@@ -7,16 +7,32 @@ type PostProps = {
 
 export function Post({ post }: PostProps) {
     return (
-        <div>
+        <div style={{
+            marginLeft: '2em',
+            marginTop: '1em',
+            paddingBottom: '1em',
+            color: 'white',
+            width: '700px',
+            display: 'flex',
+            borderBottom: '1px gray solid',
+        }}>
+            <Avatar sx={{marginTop: '1em', marginRight: '1em'}}>{post.avatar}</Avatar>
             <div>
-            <Avatar>{post.avatar}</Avatar>
-            <div>
-                <p>{post.name}</p>
-                <p>@{post.username}</p>
-            </div>
-            </div>
-            <div>
-                {post.body}
+                <div  style={{
+                    display: 'flex',
+                }}>
+                    <p style={{
+                        marginRight: '0.5em',
+                        color: '#9575cd'
+                    }}>{post.name}</p>
+                    <p style={
+                        {color: 'grey'}}>
+                            @{post.username}
+                    </p>
+                </div>
+                <p style={{
+                    marginTop: '-0.5em'
+                }}>{post.body}</p>
             </div>
         </div>
     )
