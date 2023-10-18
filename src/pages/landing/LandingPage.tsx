@@ -2,7 +2,7 @@ import { Button, ButtonProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { deepPurple } from "@mui/material/colors";
 import { useState } from "react";
-import { SignIn } from "../../components/signin/signIn";
+import { SignIn } from "../../components/signin/SignIn";
 
 const LandingPageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: theme.palette.getContrastText(deepPurple[300]),
