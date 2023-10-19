@@ -6,11 +6,9 @@ export interface User {
 	details: UserType,
 }
 
-
+// UPDATE THIS
 const initialState: User  = {
-	details: {
-		signedIn: false,
-	},
+	details: Hera,
 };
 
 export const UserSlice = createSlice({
