@@ -69,8 +69,8 @@ export function LandingPage() {
           </LandingPageButton>
         </div>
         <div>
-          {useSignIn && !useSignUp ? <SignIn /> : null}
-          {!useSignIn && useSignUp ? <SignIn /> : null}
+          {useSignIn && !useSignUp ? <SignIn signIn={true} /> : null}
+          {!useSignIn && useSignUp ? <SignIn signIn={false} /> : null}
         </div>
       </div>
     </div>

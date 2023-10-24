@@ -45,13 +45,13 @@ export function Sidebar() {
         <NavButton>Account</NavButton>
         <PostButton>Boo</PostButton>
       </div>
-        <div id="curr-profile">
-          <Avatar>{user.avatar}</Avatar>
-          <div id="profile-sidebar">
-            <p>{user.displayName}</p>
-            <p>@{user.userName}</p>
-          </div>
+      <div id="curr-profile">
+        <Avatar>{user.avatar}</Avatar>
+        <div id="profile-sidebar">
+          <p>{user.displayName}</p>
+          <p>@{user.userName}</p>
         </div>
+      </div>
     </div>
   );
 }

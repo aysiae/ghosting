@@ -1,24 +1,24 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { UserType } from '../../types/userTypes';
-import { Hera } from '../../mockData/mockUserDetails';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { UserType } from "../../types/userTypes";
+import { Hera } from "../../mockData/mockUserDetails";
 
 export interface User {
-	details: UserType,
+  details: UserType;
 }
 
 // UPDATE THIS
-const initialState: User  = {
-	details: Hera,
+const initialState: User = {
+  details: Hera,
 };
 
 export const UserSlice = createSlice({
-	name: 'UserDetails',
-	initialState,
-	reducers: {
-		getUser: (state, action: PayloadAction) => {
-			state.details = Hera;
-		},
-	},
+  name: "UserDetails",
+  initialState,
+  reducers: {
+    getUser: (state, action: PayloadAction) => {
+      state.details = Hera;
+    },
+  },
 });
 
 export default UserSlice;
