@@ -54,35 +54,35 @@ const inEffect = `
 `;
 
 export function Authenticator({ signIn }: { signIn: boolean }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isMatching, setIsMatching] = useState(true);
 
   const emailCapture = (e: any) => {
     setEmail(e.target.value);
-  }
+  };
 
   const passwordCapture = (e: any) => {
     setPassword(e.target.value);
-  }
+  };
 
   const passwordsMatch = (e: any) => {
     console.log(password);
-    console.log('second input', e.target.value);
-    if(password === e.target.value) {
+    console.log("second input", e.target.value);
+    if (password === e.target.value) {
       setIsMatching(true);
     } else {
-      setIsMatching(false)
+      setIsMatching(false);
     }
-  }
+  };
 
   const launchSignIn = () => {
     SignIn(email, password);
-  }
+  };
 
   const launchSignUp = () => {
     SignUp(email, password);
-  }
+  };
 
   return (
     <>
@@ -107,17 +107,44 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
         >
           {signIn ? (
             <>
-              <SignInField onBlur={(e) => emailCapture(e)} placeholder="email" />
-              <SignInField onBlur={(e) => passwordCapture(e)} placeholder="password" />
-              <SignInButton onClick={(e) => launchSignIn()} sx={{ marginTop: "2em" }}>Sign In</SignInButton>
+              <SignInField
+                onBlur={(e) => emailCapture(e)}
+                placeholder="email"
+              />
+              <SignInField
+                onBlur={(e) => passwordCapture(e)}
+                placeholder="password"
+              />
+              <SignInButton
+                onClick={(e) => launchSignIn()}
+                sx={{ marginTop: "2em" }}
+              >
+                Sign In
+              </SignInButton>
             </>
           ) : (
             <>
-              <SignInField onBlur={(e) => emailCapture(e)} placeholder="email" />
-              <SignInField onBlur={(e) => passwordCapture(e)} placeholder="password" />
-              <SignInField onBlur={(e) => passwordsMatch(e)} placeholder="retype password" />
-              {isMatching ? null : <p style={{color: 'red'}}>Passwords don't match.</p>}
-              <SignInButton onClick={(e) => launchSignUp()} sx={{ marginTop: "2em" }}>Sign Up!</SignInButton>
+              <SignInField
+                onBlur={(e) => emailCapture(e)}
+                placeholder="email"
+              />
+              <SignInField
+                onBlur={(e) => passwordCapture(e)}
+                placeholder="password"
+              />
+              <SignInField
+                onBlur={(e) => passwordsMatch(e)}
+                placeholder="retype password"
+              />
+              {isMatching ? null : (
+                <p style={{ color: "red" }}>Passwords don't match.</p>
+              )}
+              <SignInButton
+                onClick={(e) => launchSignUp()}
+                sx={{ marginTop: "2em" }}
+              >
+                Sign Up!
+              </SignInButton>
             </>
           )}
         </FormControl>
