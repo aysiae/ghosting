@@ -49,7 +49,7 @@ const inEffect = `
   }
 `;
 
-export function SignIn({ signIn }: { signIn: boolean }) {
+export function Authenticator({ signIn }: { signIn: boolean }) {
   return (
     <>
       <style children={inEffect} />

@@ -2,7 +2,7 @@ import { Button, ButtonProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { deepPurple } from "@mui/material/colors";
 import { useState } from "react";
-import { SignIn } from "../../components/signin/SignIn";
+import { Authenticator } from "../../components/authenticator/Authenticator";
 
 const LandingPageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: theme.palette.getContrastText(deepPurple[300]),
@@ -69,8 +69,8 @@ export function LandingPage() {
           </LandingPageButton>
         </div>
         <div>
-          {useSignIn && !useSignUp ? <SignIn signIn={true} /> : null}
-          {!useSignIn && useSignUp ? <SignIn signIn={false} /> : null}
+          {useSignIn && !useSignUp ? <Authenticator signIn={true} /> : null}
+          {!useSignIn && useSignUp ? <Authenticator signIn={false} /> : null}
         </div>
       </div>
     </div>
