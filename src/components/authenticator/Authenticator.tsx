@@ -1,6 +1,10 @@
 import { FormControl, TextField, Button, ButtonProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { deepPurple } from "@mui/material/colors";
+import { useState } from "react";
+
+import { SignIn } from "../../utils/auth/signIn";
+import { SignUp } from "../../utils/auth/signUp";
 
 const SignInButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: theme.palette.getContrastText(deepPurple[300]),
@@ -50,6 +54,25 @@ const inEffect = `
 `;
 
 export function Authenticator({ signIn }: { signIn: boolean }) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const emailCapture = (e: any) => {
+    setEmail(e.target.value);
+  }
+
+  const passwordCapture = (e: any) => {
+    setPassword(e.target.value);
+  }
+
+  const launchSignIn = () => {
+    SignIn(email, password);
+  }
+
+  const launchSignUp = () => {
+    SignUp(email, password);
+  }
+
   return (
     <>
       <style children={inEffect} />
@@ -73,17 +96,16 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
         >
           {signIn ? (
             <>
-              <SignInField placeholder="email" />
-              <SignInField placeholder="password" />
-              <SignInButton sx={{ marginTop: "2em" }}>Sign In</SignInButton>
+              <SignInField onBlur={(e) => emailCapture(e)} placeholder="email" />
+              <SignInField onBlur={(e) => passwordCapture(e)} placeholder="password" />
+              <SignInButton onClick={(e) => launchSignIn()} sx={{ marginTop: "2em" }}>Sign In</SignInButton>
             </>
           ) : (
             <>
-              <SignInField placeholder="email" />
-              <SignInField placeholder="display name" />
-              <SignInField placeholder="username" />
-              <SignInField placeholder="password" />
-              <SignInButton sx={{ marginTop: "2em" }}>Sign Up!</SignInButton>
+              <SignInField onBlur={(e) => emailCapture} placeholder="email" />
+              <SignInField onBlur={(e) => passwordCapture} placeholder="password" />
+              <SignInField placeholder="retype password" />
+              <SignInButton onClick={(e) => launchSignUp()} sx={{ marginTop: "2em" }}>Sign Up!</SignInButton>
             </>
           )}
         </FormControl>
