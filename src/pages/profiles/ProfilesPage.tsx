@@ -10,7 +10,7 @@ export function ProfilesPage() {
       alignItems: 'center',
       minHeight: '100vh'
     }}>
-      <h2 style={{marginLeft: '1em', color: 'white'}}>Ready to get spooky?</h2>
+      <h2 style={{marginRight: '1em', color: 'white'}}>Ready to get spooky?</h2>
       <SelectActiveProfile />
     </Box>
   );
