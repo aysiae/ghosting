@@ -1,5 +1,5 @@
 import { Sidebar } from "../../components/sidebar/Sidebar";
-import { Timeline } from "../../layouts/Tiemline";
+import { Timeline } from "../../layouts/Timeline";
 
 export function TimelinePage() {
   return (

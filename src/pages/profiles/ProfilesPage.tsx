@@ -1,9 +1,11 @@
-import { useState } from "react";
-import { mockProfileData } from "../../mockData/MockProfilesData";
+import { Box } from "@mui/material";
+import { SelectActiveProfile } from "../../layouts/SelectActiveProfile";
 
 export function ProfilesPage() {
-  // takes state all the user created profiles and displays them as tiles to select (like netflix)
-  const [allProfiles, setAllProfiles] = useState(mockProfileData);
 
-  return <div></div>;
+  return (
+    <Box>
+      <SelectActiveProfile />
+    </Box>
+  );
 }
