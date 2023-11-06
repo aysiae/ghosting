@@ -5,11 +5,11 @@ import Avatar from "@mui/material/Avatar";
 import { useAppSelector } from "../../store/store";
 
 import "./Sidebar.scss";
-const logo = require("../../assets/ghost.png");
+const logo = require("../../assets/ghost-2.png");
 
 const NavButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: theme.palette.getContrastText(deepPurple[300]),
-  backgroundColor: "black",
+  backgroundColor: '#151317',
   borderRadius: 0,
   "&:hover": {
     backgroundColor: deepPurple[300],
@@ -34,7 +34,9 @@ export function Sidebar() {
   return (
     <div className="sidebar-container">
       <div id="title">
-        <img src={logo} alt="small purple smiling ghost" />
+        <img 
+        style={{width: '50px', height: '50px', margin: '1em'}}
+        src={logo} alt="small purple smiling ghost" />
         <h1>Ghostish</h1>
       </div>
       <div id="nav">

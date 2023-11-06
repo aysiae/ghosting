@@ -67,8 +67,6 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
   };
 
   const passwordsMatch = (e: any) => {
-    console.log(password);
-    console.log("second input", e.target.value);
     if (password === e.target.value) {
       setIsMatching(true);
     } else {
