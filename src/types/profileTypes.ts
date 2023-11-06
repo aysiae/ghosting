@@ -1,4 +1,4 @@
 export type BasicProfileType = {
-    displayName: string,
-    avatar?: string,
-}
+  displayName: string;
+  avatar?: string;
+};
