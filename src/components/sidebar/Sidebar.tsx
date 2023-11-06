@@ -9,7 +9,7 @@ const logo = require("../../assets/ghost-2.png");
 
 const NavButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: theme.palette.getContrastText(deepPurple[300]),
-  backgroundColor: '#151317',
+  backgroundColor: "#151317",
   borderRadius: 0,
   "&:hover": {
     backgroundColor: deepPurple[300],
@@ -32,11 +32,21 @@ export function Sidebar() {
   const user = useAppSelector((state) => state.user.details);
 
   return (
-    <div className="sidebar-container">
+    <div
+      style={{
+        minWidth: "300px",
+        maxWidth: "500px",
+        backgroundColor: "#151317",
+        height: "100vh",
+        color: "white",
+      }}
+    >
       <div id="title">
-        <img 
-        style={{width: '50px', height: '50px', margin: '1em'}}
-        src={logo} alt="small purple smiling ghost" />
+        <img
+          style={{ width: "50px", height: "50px", margin: "1em" }}
+          src={logo}
+          alt="small purple smiling ghost"
+        />
         <h1>Ghostish</h1>
       </div>
       <div id="nav">

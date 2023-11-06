@@ -1,5 +1,3 @@
 export function ProfileCard() {
-    return (
-        <div></div>
-    )
+  return <div></div>;
 }
