@@ -1,19 +1,20 @@
 import { Box } from "@mui/material";
 import { ProfileCard } from "../components/profileCard/ProfileCard"
 import { mockProfileData } from "../mockData/MockProfilesData"
-import { useState } from "react"
+import { BasicProfileType } from "../types/profileTypes";
 
 export function SelectActiveProfile () {
-    const [allProfiles, setAllProfiles] = useState(mockProfileData);
+    const allProfiles: BasicProfileType[] = mockProfileData;
 
     return (
         <Box sx={{
             display: 'flex',
             flexDirection: 'row'
         }}>
-            {allProfiles.map(profile => (
+            {allProfiles ? allProfiles.map(profile => (
                 <ProfileCard profile={profile} />
-            ))}
+            )) : null}
+            <ProfileCard profile={{displayName: 'Create New Profile'}} />
         </Box>
         )
     }
