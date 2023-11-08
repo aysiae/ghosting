@@ -90,7 +90,7 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
           width: "600px",
           height: "400px",
           borderRadius: "25px",
-          boxShadow: "5px 2px 9px #9575cd",
+          boxShadow: "5px 2px 9px black",
           marginTop: "2em",
           animationName: "react-fade-in",
           animationDuration: "0.75s",
