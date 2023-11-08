@@ -56,9 +56,7 @@ export function NewPost() {
         borderBottom: "1px grey solid",
       }}
     >
-      <div>
         <Avatar sx={{ marginTop: "0.5em" }}>HV</Avatar>
-      </div>
       <div
         style={{
           width: "75%",
