@@ -1,21 +1,8 @@
-import { Button, ButtonProps } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import { deepPurple } from "@mui/material/colors";
+import { Button, Typography, Box } from "@mui/material";
 import { useState } from "react";
 import { Authenticator } from "../../components/authenticator/Authenticator";
 
-const LandingPageButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: theme.palette.getContrastText(deepPurple[300]),
-  backgroundColor: "black",
-  borderColor: deepPurple[300],
-  borderStyle: "solid",
-  borderWidth: "2px",
-  borderRadius: "25px",
-  marginRight: "1em",
-  "&:hover": {
-    backgroundColor: deepPurple[400],
-  },
-}));
+
 
 const ghost = require("../../assets/ghost-2.png");
 
@@ -34,8 +21,8 @@ export function LandingPage() {
   };
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         color: "white",
         display: "flex",
         position: "absolute",
@@ -43,36 +30,30 @@ export function LandingPage() {
         left: "25%",
       }}
     >
-      <div>
+      <Box>
         <img src={ghost} alt="ghost with blush smiling" />
-        <h1
-          style={{
-            textAlign: "center",
-          }}
-        >
-          Ghostish
-        </h1>
-      </div>
-      <div
-        style={{
+      <Typography sx={{textAlign: 'center'}} variant="h1">Ghostish</Typography>
+      </Box>
+      <Box
+        sx={{
           marginLeft: "5em",
         }}
       >
-        <h2>Ready to haunt this place?</h2>
-        <h3>Sign in or sign up to post your first Boo!</h3>
-        <div>
-          <LandingPageButton onClick={(e) => gettingStarted(e)}>
+        <Typography sx={{m: 1}} variant='h4'>Ready to haunt this place?</Typography>
+        <Typography sx={{m: 1}} variant='h5'>Sign in or sign up to post your first Boo!</Typography>
+        <Box>
+          <Button sx={{m: 1}} variant='outlined' onClick={(e) => gettingStarted(e)}>
             Sign In
-          </LandingPageButton>
-          <LandingPageButton onClick={(e) => gettingStarted(e)}>
+          </Button>
+          <Button sx={{m: 1}} variant='outlined' onClick={(e) => gettingStarted(e)}>
             Sign Up
-          </LandingPageButton>
-        </div>
-        <div>
+          </Button>
+        </Box>
+        <Box>
           {useSignIn && !useSignUp ? <Authenticator signIn={true} /> : null}
           {!useSignIn && useSignUp ? <Authenticator signIn={false} /> : null}
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 }
