@@ -1,4 +1,11 @@
-import { FormControl, TextField, Button, Box, Typography, Checkbox} from "@mui/material";
+import {
+  FormControl,
+  TextField,
+  Button,
+  Box,
+  Typography,
+  Checkbox,
+} from "@mui/material";
 import { useState } from "react";
 
 import { SignIn } from "../../utils/auth/signIn";
@@ -55,20 +62,26 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
           animationDuration: "0.75s",
         }}
       >
-        <FormControl sx={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignContent: 'center'
-        }}>
-          <Typography variant='h5' sx={{mt: 4, width:'20%'}}>Get ready to get spooky!</Typography>
+        <FormControl
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignContent: "center",
+          }}
+        >
+          <Typography variant="h5" sx={{ mt: 4, width: "20%" }}>
+            Get ready to get spooky!
+          </Typography>
           {signIn ? (
-            <Box sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              width: '60%',
-              m: 4,
-            }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: "60%",
+                m: 4,
+              }}
+            >
               <TextField
                 required
                 variant="standard"
@@ -77,31 +90,36 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
               />
               <TextField
                 required
-                variant='standard'
+                variant="standard"
                 type="password"
                 onBlur={(e) => passwordCapture(e)}
                 placeholder="Password"
               />
-              <Box sx={{display: 'flex', flexDirection: 'row', mt:2}}>
-                <Checkbox sx={{width: '10px', height: '10px', marginTop: '0.25em'}} onChange={(e) => setRememberMe(!rememberMe)} /> 
-                <Typography sx={{ml: 1}}>Remember me?</Typography>
+              <Box sx={{ display: "flex", flexDirection: "row", mt: 2 }}>
+                <Checkbox
+                  sx={{ width: "10px", height: "10px", marginTop: "0.25em" }}
+                  onChange={(e) => setRememberMe(!rememberMe)}
+                />
+                <Typography sx={{ ml: 1 }}>Remember me?</Typography>
               </Box>
               <Button
-                variant='contained'
+                variant="contained"
                 onClick={(e) => launchSignIn()}
                 sx={{ marginTop: "2em" }}
-                disabled={email && password ? false: true}
+                disabled={email && password ? false : true}
               >
                 Sign In!
               </Button>
             </Box>
           ) : (
-            <Box sx={{
-              m: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              width: '60%'
-            }}>
+            <Box
+              sx={{
+                m: 4,
+                display: "flex",
+                flexDirection: "column",
+                width: "60%",
+              }}
+            >
               <TextField
                 required
                 variant="standard"
@@ -111,14 +129,14 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
               <TextField
                 required
                 variant="standard"
-                type='password'
+                type="password"
                 onBlur={(e) => passwordCapture(e)}
                 placeholder="Password"
               />
               <TextField
                 required
                 variant="standard"
-                type='password'
+                type="password"
                 onBlur={(e) => passwordsMatch(e)}
                 placeholder="Retype Password"
               />
@@ -126,10 +144,10 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
                 <p style={{ color: "red" }}>Passwords don't match.</p>
               )}
               <Button
-                variant='contained'
+                variant="contained"
                 onClick={(e) => launchSignUp()}
                 sx={{ marginTop: "2em" }}
-                disabled={email && password && isMatching ? false: true}
+                disabled={email && password && isMatching ? false : true}
               >
                 Sign Up!
               </Button>

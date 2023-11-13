@@ -77,12 +77,14 @@ export function Post({ post }: PostProps) {
           >
             {post.name}
           </Typography>
-          <Typography variant="body1" sx={{ color: "grey" }}>@{post.username}</Typography>
+          <Typography variant="body1" sx={{ color: "grey" }}>
+            @{post.username}
+          </Typography>
         </Box>
         <Typography
           variant="body1"
           sx={{
-            mb: 2
+            mb: 2,
           }}
         >
           {post.body}

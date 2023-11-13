@@ -11,7 +11,7 @@ export function ProfilesPage() {
         minHeight: "100vh",
       }}
     >
-      <Typography variant='h2' sx={{ marginRight: "1em", color: "white" }}>
+      <Typography variant="h2" sx={{ marginRight: "1em", color: "white" }}>
         Ready to get spooky?
       </Typography>
       <SelectActiveProfile />

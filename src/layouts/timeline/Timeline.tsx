@@ -32,7 +32,7 @@ export function Timeline() {
           position: "sticky",
         }}
       >
-        <Typography variant='h4'>What's Spooking?</Typography>
+        <Typography variant="h4">What's Spooking?</Typography>
         <img
           style={{
             width: "50px",

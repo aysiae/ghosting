@@ -1,59 +1,59 @@
-import { ThemeOptions } from '@mui/material/styles';
+import { ThemeOptions } from "@mui/material/styles";
 
 export const themeOptions: ThemeOptions = {
   palette: {
-    mode: 'dark',
+    mode: "dark",
     primary: {
-      main: '#7e57c2',
+      main: "#7e57c2",
     },
     secondary: {
-      main: '#ff4081',
+      main: "#ff4081",
     },
     background: {
-      default: '#151317',
-      paper: '#151317',
+      default: "#151317",
+      paper: "#151317",
     },
   },
   typography: {
     h1: {
-      fontFamily: 'Bebas Neue',
+      fontFamily: "Bebas Neue",
     },
     button: {
-      fontFamily: 'Arsenal',
+      fontFamily: "Arsenal",
     },
     body1: {
-      fontFamily: 'Arsenal',
+      fontFamily: "Arsenal",
     },
     subtitle2: {
-      fontFamily: 'Arsenal',
+      fontFamily: "Arsenal",
     },
     subtitle1: {
-      fontFamily: 'Arsenal',
+      fontFamily: "Arsenal",
     },
     h6: {
-      fontFamily: 'Arsenal',
+      fontFamily: "Arsenal",
     },
     h5: {
-      fontFamily: 'Arsenal',
+      fontFamily: "Arsenal",
     },
     h4: {
-      fontFamily: 'Arsenal',
+      fontFamily: "Arsenal",
     },
     h3: {
-      fontFamily: 'Arsenal',
+      fontFamily: "Arsenal",
     },
     h2: {
-      fontFamily: 'Arsenal',
+      fontFamily: "Arsenal",
     },
     caption: {
-      fontFamily: 'Alegreya Sans SC',
+      fontFamily: "Alegreya Sans SC",
     },
     overline: {
-      fontFamily: 'Alegreya Sans SC',
+      fontFamily: "Alegreya Sans SC",
     },
     body2: {
-      fontFamily: 'Arsenal',
+      fontFamily: "Arsenal",
     },
-    fontFamily: 'Bebas Neue',
+    fontFamily: "Bebas Neue",
   },
 };

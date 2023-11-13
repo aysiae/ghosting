@@ -1,8 +1,6 @@
 import Avatar from "@mui/material/Avatar";
 import TextField from "@mui/material/TextField";
-import {Button, Box} from "@mui/material";
-
-
+import { Button, Box } from "@mui/material";
 
 export function NewPost() {
   return (
@@ -15,7 +13,7 @@ export function NewPost() {
         color: "white",
       }}
     >
-        <Avatar sx={{ marginTop: "0.5em" }}>HV</Avatar>
+      <Avatar sx={{ marginTop: "0.5em" }}>HV</Avatar>
       <Box
         sx={{
           width: "75%",
@@ -29,7 +27,12 @@ export function NewPost() {
           rows={3}
           placeholder={"Whatcha thinking?!"}
         />
-        <Button variant='contained' sx={{ borderRadius: '25px', float: 'right', m: 1, pl: 6, pr: 6 }}>Boo!</Button>
+        <Button
+          variant="contained"
+          sx={{ borderRadius: "25px", float: "right", m: 1, pl: 6, pr: 6 }}
+        >
+          Boo!
+        </Button>
       </Box>
     </Box>
   );

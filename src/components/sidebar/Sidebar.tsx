@@ -1,9 +1,8 @@
-import {Button, Box, Typography} from "@mui/material"
+import { Button, Box, Typography } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import { useAppSelector } from "../../store/store";
 
 const logo = require("../../assets/ghost-2.png");
-
 
 export function Sidebar() {
   const user = useAppSelector((state) => state.user.details);
@@ -18,55 +17,83 @@ export function Sidebar() {
         color: "white",
       }}
     >
-      <Box sx={{    
-        display: 'flex',
-        flexDirection: 'row',
-        ml: 2
-        }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          ml: 2,
+        }}
+      >
         <img
           style={{ width: "50px", height: "50px", margin: "1em" }}
           src={logo}
           alt="small purple smiling ghost"
         />
-        <Typography variant='h1' sx={{
-          fontSize: '48px',
-          mt: 2
-        }}>Ghostish</Typography>
+        <Typography
+          variant="h1"
+          sx={{
+            fontSize: "48px",
+            mt: 2,
+          }}
+        >
+          Ghostish
+        </Typography>
       </Box>
-      <Box sx={{
-        display:'flex',
-        flexDirection: 'column',
-      }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <Button>Home</Button>
         <Button>Explore</Button>
         <Button>Notifications</Button>
         <Button>Messages</Button>
         <Button>Account</Button>
-        <Button variant='contained' sx={{borderRadius: '25px', width: '80%', ml:4}}>Boo</Button>
+        <Button
+          variant="contained"
+          sx={{ borderRadius: "25px", width: "80%", ml: 4 }}
+        >
+          Boo
+        </Button>
       </Box>
-      <Box sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            marginLeft: '2em',
-            marginBottom: '2em',
-            position: 'fixed',
-            bottom: 0,
-      }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          marginLeft: "2em",
+          marginBottom: "2em",
+          position: "fixed",
+          bottom: 0,
+        }}
+      >
         <Avatar>{user.avatar}</Avatar>
-        <Box sx={{
-          display: 'flex',
-          flexDirection: 'column'
-        }}>
-          <Typography variant='body1' sx={{
-                        marginTop: 0,
-                        marginBottom: -0,
-                        marginLeft: '1em'
-          }}>{user.displayName}</Typography>
-          <Typography variant='body1' sx={{
-                        marginTop: 0,
-                        marginBottom: -0,
-                        marginLeft: '1em'
-          }}>@{user.userName}</Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Typography
+            variant="body1"
+            sx={{
+              marginTop: 0,
+              marginBottom: -0,
+              marginLeft: "1em",
+            }}
+          >
+            {user.displayName}
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              marginTop: 0,
+              marginBottom: -0,
+              marginLeft: "1em",
+            }}
+          >
+            @{user.userName}
+          </Typography>
         </Box>
       </Box>
     </Box>
