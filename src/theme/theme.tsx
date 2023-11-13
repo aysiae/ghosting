@@ -19,7 +19,7 @@ export const themeOptions: ThemeOptions = {
       fontFamily: 'Bebas Neue',
     },
     button: {
-      fontFamily: 'Bebas Neue',
+      fontFamily: 'Arsenal',
     },
     body1: {
       fontFamily: 'Arsenal',

@@ -1,39 +1,17 @@
-import { styled } from "@mui/material/styles";
-import Button, { ButtonProps } from "@mui/material/Button";
-import { deepPurple } from "@mui/material/colors";
+import {Button, Box, Typography} from "@mui/material"
 import Avatar from "@mui/material/Avatar";
 import { useAppSelector } from "../../store/store";
 
 import "./Sidebar.scss";
 const logo = require("../../assets/ghost-2.png");
 
-const NavButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: theme.palette.getContrastText(deepPurple[300]),
-  backgroundColor: "#151317",
-  borderRadius: 0,
-  "&:hover": {
-    backgroundColor: deepPurple[300],
-  },
-}));
-
-const PostButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: theme.palette.getContrastText(deepPurple[300]),
-  backgroundColor: deepPurple[300],
-  borderRadius: "25px",
-  marginTop: "2em",
-  marginLeft: "2em",
-  width: "80%",
-  "&:hover": {
-    backgroundColor: deepPurple[400],
-  },
-}));
 
 export function Sidebar() {
   const user = useAppSelector((state) => state.user.details);
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         minWidth: "300px",
         maxWidth: "500px",
         backgroundColor: "#151317",
@@ -41,29 +19,57 @@ export function Sidebar() {
         color: "white",
       }}
     >
-      <div id="title">
+      <Box sx={{    
+        display: 'flex',
+        flexDirection: 'row',
+        ml: 2
+        }}>
         <img
           style={{ width: "50px", height: "50px", margin: "1em" }}
           src={logo}
           alt="small purple smiling ghost"
         />
-        <h1>Ghostish</h1>
-      </div>
-      <div id="nav">
-        <NavButton>Home</NavButton>
-        <NavButton>Explore</NavButton>
-        <NavButton>Notifications</NavButton>
-        <NavButton>Messages</NavButton>
-        <NavButton>Account</NavButton>
-        <PostButton>Boo</PostButton>
-      </div>
-      <div id="curr-profile">
+        <Typography variant='h1' sx={{
+          fontSize: '48px',
+          mt: 2
+        }}>Ghostish</Typography>
+      </Box>
+      <Box sx={{
+        display:'flex',
+        flexDirection: 'column',
+      }}>
+        <Button>Home</Button>
+        <Button>Explore</Button>
+        <Button>Notifications</Button>
+        <Button>Messages</Button>
+        <Button>Account</Button>
+        <Button variant='contained' sx={{borderRadius: '25px', width: '80%', ml:4}}>Boo</Button>
+      </Box>
+      <Box sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            marginLeft: '2em',
+            marginBottom: '2em',
+            position: 'fixed',
+            bottom: 0,
+      }}>
         <Avatar>{user.avatar}</Avatar>
-        <div id="profile-sidebar">
-          <p>{user.displayName}</p>
-          <p>@{user.userName}</p>
-        </div>
-      </div>
-    </div>
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'column'
+        }}>
+          <Typography variant='body1' sx={{
+                        marginTop: 0,
+                        marginBottom: -0,
+                        marginLeft: '1em'
+          }}>{user.displayName}</Typography>
+          <Typography variant='body1' sx={{
+                        marginTop: 0,
+                        marginBottom: -0,
+                        marginLeft: '1em'
+          }}>@{user.userName}</Typography>
+        </Box>
+      </Box>
+    </Box>
   );
 }
