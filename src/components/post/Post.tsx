@@ -1,4 +1,4 @@
-import { Avatar } from "@mui/material";
+import { Avatar, Box, Typography } from "@mui/material";
 import { createSvgIcon } from "@mui/material/utils";
 import { PostType } from "../../types/postTypes";
 
@@ -47,8 +47,8 @@ type PostProps = {
 
 export function Post({ post }: PostProps) {
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         marginLeft: "2em",
         marginTop: "1em",
         paddingBottom: "1em",
@@ -61,35 +61,38 @@ export function Post({ post }: PostProps) {
       <Avatar sx={{ marginTop: "1em", marginRight: "1em" }}>
         {post.avatar}
       </Avatar>
-      <div>
-        <div
-          style={{
+      <Box>
+        <Box
+          sx={{
+            mb: 1,
             display: "flex",
           }}
         >
-          <p
-            style={{
+          <Typography
+            variant="body1"
+            sx={{
               marginRight: "0.5em",
               color: "#9575cd",
             }}
           >
             {post.name}
-          </p>
-          <p style={{ color: "grey" }}>@{post.username}</p>
-        </div>
-        <p
-          style={{
-            marginTop: "-0.5em",
+          </Typography>
+          <Typography variant="body1" sx={{ color: "grey" }}>@{post.username}</Typography>
+        </Box>
+        <Typography
+          variant="body1"
+          sx={{
+            mb: 2
           }}
         >
           {post.body}
-        </p>
-        <div>
+        </Typography>
+        <Box>
           <ReplyIcon sx={{ marginRight: "5em" }} />
           <HeartIcon sx={{ marginRight: "5em" }} />
           <RepostIcon sx={{ marginRight: "5em" }} />
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 }
