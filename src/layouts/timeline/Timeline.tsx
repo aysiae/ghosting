@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../store/store";
 import { getPosts } from "../../store/features/timelineSlice";
 import { useEffect } from "react";
 import { Post } from "../../components/post/Post";
+import { Box } from "@mui/material";
 
 const logo = require("../../assets/ghost.png");
 
@@ -16,16 +17,15 @@ export function Timeline() {
   }, [dispatch, posts]);
 
   return (
-    <div
-      className="timeline"
-      style={{
+    <Box
+      sx={{
         borderRight: "1px grey solid",
         borderLeft: "1px grey solid",
       }}
     >
       <NewPost />
-      <div
-        style={{
+      <Box
+        sx={{
           display: "flex",
           justifyContent: "center",
           color: "white",
@@ -43,10 +43,10 @@ export function Timeline() {
           src={logo}
           alt="ghost logo"
         />
-      </div>
+      </Box>
       {posts.map((post) => {
         return <Post post={post} />;
       })}
-    </div>
+    </Box>
   );
 }

@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { SelectActiveProfile } from "../../layouts/selectActiveProfile/SelectActiveProfile";
 
 export function ProfilesPage() {
@@ -11,9 +11,9 @@ export function ProfilesPage() {
         minHeight: "100vh",
       }}
     >
-      <h2 style={{ marginRight: "1em", color: "white" }}>
+      <Typography variant='h2' sx={{ marginRight: "1em", color: "white" }}>
         Ready to get spooky?
-      </h2>
+      </Typography>
       <SelectActiveProfile />
     </Box>
   );

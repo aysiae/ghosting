@@ -1,9 +1,10 @@
 import { Sidebar } from "../../components/sidebar/Sidebar";
 import { Timeline } from "../../layouts/timeline/Timeline";
+import { Box } from "@mui/material";
 
 export function TimelinePage() {
   return (
-    <div
+    <Box
       style={{
         display: "flex",
         flexDirection: "row",
@@ -13,6 +14,6 @@ export function TimelinePage() {
     >
       <Sidebar />
       <Timeline />
-    </div>
+    </Box>
   );
 }
