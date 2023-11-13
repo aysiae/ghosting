@@ -1,49 +1,8 @@
-import { FormControl, TextField, Button, ButtonProps } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import { deepPurple } from "@mui/material/colors";
+import { FormControl, TextField, Button, Box, Typography} from "@mui/material";
 import { useState } from "react";
 
 import { SignIn } from "../../utils/auth/signIn";
 import { SignUp } from "../../utils/auth/signUp";
-
-const SignInButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: theme.palette.getContrastText(deepPurple[300]),
-  backgroundColor: deepPurple[300],
-  width: "50%",
-  borderStyle: "solid",
-  "&:hover": {
-    backgroundColor: deepPurple[400],
-  },
-}));
-
-const SignInField = styled(TextField)({
-  width: "400px",
-  "& .MuiInputBase-input": {
-    color: "white",
-  },
-  "& label.Mui-focused": {
-    color: deepPurple[400],
-  },
-  "& .MuiInput-underline:after": {
-    borderBottomColor: deepPurple[400],
-  },
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      borderRight: 0,
-      borderLeft: 0,
-      borderTop: 0,
-      borderColor: deepPurple[400],
-    },
-    "&:hover fieldset": {
-      borderColor: deepPurple[400],
-      color: "white",
-    },
-    "&.Mui-focused fieldset": {
-      borderColor: deepPurple[400],
-      color: "white",
-    },
-  },
-});
 
 const inEffect = `
   @keyframes react-fade-in {
@@ -85,10 +44,9 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
   return (
     <>
       <style children={inEffect} />
-      <div
-        style={{
+      <Box
+        sx={{
           width: "600px",
-          height: "400px",
           borderRadius: "25px",
           boxShadow: "5px 2px 9px black",
           marginTop: "2em",
@@ -96,57 +54,82 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
           animationDuration: "0.75s",
         }}
       >
-        <FormControl
-          sx={
-            signIn
-              ? { marginTop: "6em", marginLeft: "6em" }
-              : { marginTop: "3em", marginLeft: "6em" }
-          }
-        >
+        <FormControl sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignContent: 'center'
+        }}>
+          <Typography variant='h5' sx={{mt: 4, width:'20%'}}>Get ready to get spooky!</Typography>
           {signIn ? (
-            <>
-              <SignInField
+            <Box sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              width: '60%',
+              m: 4,
+            }}>
+              <TextField
+                required
+                variant="standard"
                 onBlur={(e) => emailCapture(e)}
-                placeholder="email"
+                placeholder="Email"
               />
-              <SignInField
+              <TextField
+                required
+                variant='standard'
+                type="password"
                 onBlur={(e) => passwordCapture(e)}
-                placeholder="password"
+                placeholder="Password"
               />
-              <SignInButton
+              <Button
+                variant='contained'
                 onClick={(e) => launchSignIn()}
                 sx={{ marginTop: "2em" }}
               >
-                Sign In
-              </SignInButton>
-            </>
+                Sign In!
+              </Button>
+            </Box>
           ) : (
-            <>
-              <SignInField
+            <Box sx={{
+              m: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              width: '60%'
+            }}>
+              <TextField
+                required
+                variant="standard"
                 onBlur={(e) => emailCapture(e)}
-                placeholder="email"
+                placeholder="Email"
               />
-              <SignInField
+              <TextField
+                required
+                variant="standard"
+                type='password'
                 onBlur={(e) => passwordCapture(e)}
-                placeholder="password"
+                placeholder="Password"
               />
-              <SignInField
+              <TextField
+                required
+                variant="standard"
+                type='passw'
                 onBlur={(e) => passwordsMatch(e)}
-                placeholder="retype password"
+                placeholder="Retype Password"
               />
               {isMatching ? null : (
                 <p style={{ color: "red" }}>Passwords don't match.</p>
               )}
-              <SignInButton
+              <Button
+                variant='contained'
                 onClick={(e) => launchSignUp()}
                 sx={{ marginTop: "2em" }}
               >
                 Sign Up!
-              </SignInButton>
-            </>
+              </Button>
+            </Box>
           )}
         </FormControl>
-      </div>
+      </Box>
     </>
   );
 }
