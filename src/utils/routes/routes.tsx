@@ -2,9 +2,10 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import { LandingPage } from "../../pages/landing/LandingPage";
-// import { ProfilesPage } from "../../pages/profiles/ProfilesPage";
+import { ProfilesPage } from "../../pages/profiles/ProfilesPage";
 import App from '../../App';
 import { TimelinePage } from '../../pages/timeline/TimelinePage';
+import { CreateNewProfileLayout} from '../../layouts/createNewProfile/CreateNewProfileLayout';
 
 
 
@@ -18,8 +19,16 @@ export const router = createBrowserRouter([
                 element: <LandingPage />
             },
             {
-                path: '/timeline',
+                path: 'timeline',
                 element: <TimelinePage />
+            },
+            {
+                path: 'profiles',
+                element: <ProfilesPage />
+            },
+            {
+                path: 'dev',
+                element: <CreateNewProfileLayout />
             }
         ]
     }

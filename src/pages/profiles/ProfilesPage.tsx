@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { SelectActiveProfile } from "../../layouts/SelectActiveProfile";
+import { SelectActiveProfile } from "../../layouts/selectActiveProfile/SelectActiveProfile";
 
 export function ProfilesPage() {
   return (

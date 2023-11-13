@@ -1,10 +1,10 @@
-import { NewPost } from "../components/newPost/NewPost";
-import { useAppDispatch, useAppSelector } from "../store/store";
-import { getPosts } from "../store/features/timelineSlice";
+import { NewPost } from "../../components/newPost/NewPost";
+import { useAppDispatch, useAppSelector } from "../../store/store";
+import { getPosts } from "../../store/features/timelineSlice";
 import { useEffect } from "react";
-import { Post } from "../components/post/Post";
+import { Post } from "../../components/post/Post";
 
-const logo = require("../assets/ghost.png");
+const logo = require("../../assets/ghost.png");
 
 export function Timeline() {
   const dispatch = useAppDispatch();
