@@ -1,16 +1,12 @@
 import React from "react";
-// import { TimelinePage } from './pages/timeline/TimelinePage';
-import { LandingPage } from "./pages/landing/LandingPage";
-// import { ProfilesPage } from "./pages/profiles/ProfilesPage";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <Provider store={store}>
-      {/* <TimelinePage /> */}
-      <LandingPage />
-      {/* <ProfilesPage /> */}
+      <Outlet />
     </Provider>
   );
 }
