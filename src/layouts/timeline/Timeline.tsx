@@ -3,9 +3,9 @@ import { useAppDispatch, useAppSelector } from "../../store/store";
 import { getPosts } from "../../store/features/timelineSlice";
 import { useEffect } from "react";
 import { Post } from "../../components/post/Post";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
-const logo = require("../../assets/ghost.png");
+const logo = require("../../assets/ghost-2.png");
 
 export function Timeline() {
   const dispatch = useAppDispatch();
@@ -32,12 +32,11 @@ export function Timeline() {
           position: "sticky",
         }}
       >
-        <h2>What's Spooking?</h2>
+        <Typography variant='h4'>What's Spooking?</Typography>
         <img
           style={{
             width: "50px",
             height: "50px",
-            marginTop: "0.75em",
             marginLeft: "0.5em",
           }}
           src={logo}

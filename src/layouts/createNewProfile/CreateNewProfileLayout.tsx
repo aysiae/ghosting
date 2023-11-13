@@ -3,7 +3,11 @@ import { CreateProfile } from "../../components/createProfile/CreateProfile"
 
 export function CreateNewProfileLayout() {
     return (
-        <Box>
+        <Box 
+        sx={{
+            width: '500px',
+            p: 5,
+        }}>
             <CreateProfile />
         </Box>
     )
