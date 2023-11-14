@@ -4,10 +4,12 @@ import { mockProfileData } from "../../mockData/MockProfilesData";
 import { BasicProfileType } from "../../types/profileTypes";
 import { CreateNewProfileLayout } from "../createNewProfile/CreateNewProfileLayout";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 export function SelectActiveProfile() {
   const allProfiles: BasicProfileType[] = mockProfileData;
   const [popoverEl, setPopoverEl] = useState<HTMLButtonElement | null>(null);
+  const [submitted, setSubmitted] = useState(false)
 
   const handlePopover = (e: React.MouseEvent<HTMLButtonElement>) => {
     setPopoverEl(e.currentTarget);
@@ -17,6 +19,8 @@ export function SelectActiveProfile() {
   const id = open ? "simple-popover" : undefined;
 
   return (
+    <>
+    {submitted ? <Navigate to='/timeline' /> :
     <Box
       sx={{
         display: "flex",
@@ -25,7 +29,7 @@ export function SelectActiveProfile() {
     >
       {allProfiles
         ? allProfiles.map((profile) => (
-            <Button>
+            <Button onClick={(e) => setSubmitted(true)}>
               <ProfileCard profile={profile} />
             </Button>
           ))
@@ -50,5 +54,7 @@ export function SelectActiveProfile() {
         <CreateNewProfileLayout />
       </Popover>
     </Box>
+}
+    </>
   );
 }
