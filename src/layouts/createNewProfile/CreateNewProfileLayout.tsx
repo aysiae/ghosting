@@ -5,7 +5,7 @@ export function CreateNewProfileLayout() {
   return (
     <Box
       sx={{
-        width: "500px",
+        width: "350px",
         p: 5,
       }}
     >

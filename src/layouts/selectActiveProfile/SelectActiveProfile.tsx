@@ -42,8 +42,8 @@ export function SelectActiveProfile() {
           horizontal: "center",
         }}
         transformOrigin={{
-          vertical: 350,
-          horizontal: 475,
+          vertical: 375,
+          horizontal: 325,
         }}
         onClose={(e) => setPopoverEl(null)}
       >
