@@ -1,5 +1,5 @@
 export type UserType = {
-  signedIn: boolean;
+  uuid: string,
   displayName?: string;
   userName?: string;
   birthDate?: string;

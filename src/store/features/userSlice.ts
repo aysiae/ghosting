@@ -8,7 +8,7 @@ export interface User {
 
 // UPDATE THIS
 const initialState: User = {
-  details: Hera,
+  details: {uuid: ''},
 };
 
 export const UserSlice = createSlice({
@@ -18,6 +18,9 @@ export const UserSlice = createSlice({
     getUser: (state, action: PayloadAction) => {
       state.details = Hera;
     },
+    addUUID: (state, action: PayloadAction<string>) => {
+      state.details.uuid = action.payload;
+    }
   },
 });
 

@@ -19,6 +19,8 @@ const inEffect = `
   }
 `;
 
+//TODO: add UUID using getUUID reducer from UserSlice to set UUID, then use UUID to grab all other user details from DB
+
 export function Authenticator({ signIn }: { signIn: boolean }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
