@@ -2,18 +2,21 @@ import { BasicProfileType } from "../types/profileTypes";
 
 const placeholderImg = require("../assets/ghost.png");
 
-const p1: BasicProfileType = {
-  displayName: "Profile 1",
+export const p1: BasicProfileType = {
+  displayName: "Hera Varela",
+  username: 'stardusthera',
   avatar: placeholderImg,
 };
 
-const p2: BasicProfileType = {
-  displayName: "Profile 2",
+export const p2: BasicProfileType = {
+  displayName: "Valkyrie",
+  username: 'coquetteharpy',
   avatar: placeholderImg,
 };
 
-const p3: BasicProfileType = {
-  displayName: "Profile 3",
+export const p3: BasicProfileType = {
+  displayName: "Dimitri",
+  username: 'pinkgrimreaper'
 };
 
 export const mockProfileData = [p1, p2, p3];

@@ -5,7 +5,7 @@ import { useAppSelector } from "../../store/store";
 const logo = require("../../assets/ghost-2.png");
 
 export function Sidebar() {
-  const user = useAppSelector((state) => state.user.details);
+  const profile = useAppSelector((state) => state.profile.details);
 
   return (
     <Box
@@ -67,7 +67,7 @@ export function Sidebar() {
           bottom: 0,
         }}
       >
-        <Avatar>{user.avatar}</Avatar>
+        <Avatar>{profile.avatar}</Avatar>
         <Box
           sx={{
             display: "flex",
@@ -82,7 +82,7 @@ export function Sidebar() {
               marginLeft: "1em",
             }}
           >
-            {user.displayName}
+            {profile.displayName}
           </Typography>
           <Typography
             variant="body1"
@@ -92,7 +92,7 @@ export function Sidebar() {
               marginLeft: "1em",
             }}
           >
-            @{user.userName}
+            @{profile.username}
           </Typography>
         </Box>
       </Box>

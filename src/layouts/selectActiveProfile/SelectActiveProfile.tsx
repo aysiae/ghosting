@@ -35,7 +35,7 @@ export function SelectActiveProfile() {
           ))
         : null}
       <Button onClick={(e) => handlePopover(e)}>
-        <ProfileCard profile={{ displayName: "Create New Profile" }} />
+        <ProfileCard profile={{ displayName: "Create New Profile", username: '' }} />
       </Button>
       <Popover
         id={id}
