@@ -7,10 +7,12 @@ import { BasicProfileType } from "../../types/profileTypes";
 import { CreateNewProfileLayout } from "../createNewProfile/CreateNewProfileLayout";
 import { useAppDispatch } from "../../store/store";
 import { setProfile } from "../../store/features/profileSlice";
+import { Navigate } from "react-router-dom";
 
 export function SelectActiveProfile() {
   const allProfiles: BasicProfileType[] = mockProfileData;
   const [popoverEl, setPopoverEl] = useState<HTMLButtonElement | null>(null);
+  const [isSelected, setIsSelected] = useState<boolean>(false)
 
   const dispatch = useAppDispatch();
 
@@ -21,13 +23,17 @@ export function SelectActiveProfile() {
   
   const setActiveProfile = (profile: BasicProfileType) => {
     dispatch(setProfile(profile));
+    setIsSelected(true);
   }
 
   const open = Boolean(popoverEl);
   const id = open ? "simple-popover" : undefined;
 
+  if(isSelected) {
+    return <Navigate to='/' />
+  }
+
   return (
-    <>
     <Box
       sx={{
         display: "flex",
@@ -61,6 +67,5 @@ export function SelectActiveProfile() {
         <CreateNewProfileLayout />
       </Popover>
     </Box>
-    </>
   );
 }

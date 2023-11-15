@@ -48,9 +48,9 @@ export function Sidebar() {
         }}
       >
         {navbar.map((item) => (
-                    <Link style={{width: '100%'}} to={item.route}>
-                    <Button sx={{width: '100%'}}>{item.title}</Button>
-                    </Link>
+          <Link style={{width: '100%'}} to={item.route}>
+            <Button sx={{width: '100%'}}>{item.title}</Button>
+          </Link>
         ))}
         <Button
           variant="contained"
