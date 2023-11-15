@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { UserType } from "../../types/userTypes";
 import { Hera } from "../../mockData/mockUserDetails";
-import { getCookie } from "../../utils";
+import { getCookie, setCookie } from "../../utils";
 
 export interface User {
   details: UserType;
@@ -19,11 +19,12 @@ export const UserSlice = createSlice({
     getUser: (state, action: PayloadAction) => {
       state.details = Hera;
     },
-    addUUID: (state, action: PayloadAction<string>) => {
+    setUUID: (state, action: PayloadAction<string>) => {
       state.details.uuid = action.payload;
+      setCookie('auth_user', action.payload);
     }
   },
 });
 
 export default UserSlice;
-export const { getUser, addUUID } = UserSlice.actions;
+export const { getUser, setUUID } = UserSlice.actions;

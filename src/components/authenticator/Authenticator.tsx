@@ -11,9 +11,7 @@ import { useState } from "react";
 
 import { SignIn, SignUp, auth } from "../../utils";
 import { useAppDispatch } from "../../store/store";
-import { addUUID } from "../../store/features/userSlice";
-import { setCookie } from "../../utils";
-import { Navigate } from "react-router-dom";
+import { setUUID } from "../../store/features/userSlice";
 
 const inEffect = `
   @keyframes react-fade-in {
@@ -49,12 +47,7 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
 
   const authenticateUser = () => {
     if(auth.currentUser) {
-      dispatch(addUUID(auth.currentUser.uid))
-      setCookie('auth_user', auth.currentUser.uid);
-      return (
-        <Navigate to='/profiles' />
-      )
-
+      dispatch(setUUID(auth.currentUser.uid))
     }
   }
 

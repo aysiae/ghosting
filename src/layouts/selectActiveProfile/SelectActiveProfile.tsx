@@ -7,7 +7,6 @@ import { BasicProfileType } from "../../types/profileTypes";
 import { CreateNewProfileLayout } from "../createNewProfile/CreateNewProfileLayout";
 import { useAppDispatch } from "../../store/store";
 import { setProfile } from "../../store/features/profileSlice";
-import { setCookie } from "../../utils";
 
 export function SelectActiveProfile() {
   const allProfiles: BasicProfileType[] = mockProfileData;
@@ -20,9 +19,8 @@ export function SelectActiveProfile() {
     setPopoverEl(e.currentTarget);
   };
   
-  const selectActiveProfile = (profile: BasicProfileType) => {
+  const setActiveProfile = (profile: BasicProfileType) => {
     dispatch(setProfile(profile));
-    setCookie('active_profile', profile.username);
   }
 
   const open = Boolean(popoverEl);
@@ -38,7 +36,7 @@ export function SelectActiveProfile() {
     >
       {allProfiles
         ? allProfiles.map((profile) => (
-            <Button onClick={(e) => selectActiveProfile(profile)}>
+            <Button onClick={(e) => setActiveProfile(profile)}>
               <ProfileCard profile={profile} />
             </Button>
           ))

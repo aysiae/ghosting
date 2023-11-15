@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { BasicProfileType } from "../../types/profileTypes";
+import {  setCookie } from "../../utils";
+import { getProfileDetails } from "../../helpers/getters/getProfileDetails";
 
 export interface ActiveProfile {
   details: BasicProfileType;
@@ -7,7 +9,7 @@ export interface ActiveProfile {
 
 // UPDATE THIS
 const initialState: ActiveProfile = {
-  details: {displayName: '', username: ''},
+  details: getProfileDetails(),
 };
 
 export const ProfileSlice = createSlice({
@@ -16,6 +18,7 @@ export const ProfileSlice = createSlice({
   reducers: {
     setProfile: (state, action: PayloadAction<BasicProfileType>) => {
       state.details = action.payload;
+      setCookie('active_profile', action.payload.username);
     },
   },
 });
