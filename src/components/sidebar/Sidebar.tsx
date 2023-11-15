@@ -1,6 +1,8 @@
 import { Button, Box, Typography } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import { useAppSelector } from "../../store/store";
+import { Link } from "react-router-dom";
+import { navbar } from "../../immutables/navbarData";
 
 const logo = require("../../assets/ghost-2.png");
 
@@ -45,12 +47,11 @@ export function Sidebar() {
           flexDirection: "column",
         }}
       >
-        <Button>Home</Button>
-        <Button>Explore</Button>
-        <Button>Notifications</Button>
-        <Button>Messages</Button>
-        <Button>Profiles</Button>
-        <Button>Account</Button>
+        {navbar.map((item) => (
+                    <Link style={{width: '100%'}} to={item.route}>
+                    <Button sx={{width: '100%'}}>{item.title}</Button>
+                    </Link>
+        ))}
         <Button
           variant="contained"
           sx={{ borderRadius: "25px", width: "80%", ml: 4 }}
