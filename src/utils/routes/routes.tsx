@@ -1,11 +1,11 @@
 // import type { RouteObject } from 'react-router';
 import { createBrowserRouter } from "react-router-dom";
 
-import { LandingPage } from "../../pages/landing/LandingPage";
-import { ProfilesPage } from "../../pages/profiles/ProfilesPage";
 import App from "../../App";
+import { ProfilesPage } from "../../pages/profiles/ProfilesPage";
 import { TimelinePage } from "../../pages/timeline/TimelinePage";
 import { CreateNewProfileLayout } from "../../layouts/createNewProfile/CreateNewProfileLayout";
+import { PrivateRoute } from "./private/privateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <LandingPage />,
+        element: <PrivateRoute><TimelinePage /></PrivateRoute>,
       },
       {
         path: "timeline",
