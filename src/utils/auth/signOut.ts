@@ -1,8 +1,8 @@
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 
-export function SignOut() {
-  signOut(auth)
+export async function SignOut() {
+  await signOut(auth)
     .then(() => {
       // Sign-out successful.
     })

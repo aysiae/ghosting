@@ -15,8 +15,6 @@ const appId: string | undefined = process.env.REACT_APP_FIREBASE_APP_ID;
 const measurementId: string | undefined =
   process.env.REACT_APP_FIREBASE_MEASUREMENT_ID;
 
-console.log(apiKey);
-
 // import { getAnalytics } from "firebase/analytics";
 
 // TODO: Add SDKs for Firebase products that you want to use

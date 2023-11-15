@@ -9,8 +9,10 @@ import {
 import { useState } from "react";
 
 
-import { SignIn } from "../../utils/auth/signIn";
-import { SignUp } from "../../utils/auth/signUp";
+import { SignIn, SignUp, auth } from "../../utils";
+import { useAppDispatch } from "../../store/store";
+import { addUUID } from "../../store/features/userSlice";
+import { setCookie } from "../../utils";
 
 const inEffect = `
   @keyframes react-fade-in {
@@ -28,6 +30,8 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
   const [isMatching, setIsMatching] = useState(true);
   const [rememberMe, setRememberMe] = useState(false);
 
+  const dispatch = useAppDispatch();
+
   const emailCapture = (e: any) => {
     setEmail(e.target.value);
   };
@@ -44,12 +48,22 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
     }
   };
 
-  const launchSignIn = () => {
-    SignIn(email, password);
+  const authenticateUser = () => {
+    if(auth.currentUser) {
+      dispatch(addUUID(auth.currentUser.uid))
+      setCookie('auth_user', auth.currentUser.uid);
+
+    }
+  }
+
+  const launchSignIn = async () => {
+    await SignIn(email, password);
+    authenticateUser();
   };
 
-  const launchSignUp = () => {
-    SignUp(email, password);
+  const launchSignUp = async () => {
+    await SignUp(email, password);
+    authenticateUser();
   };
 
   return (
@@ -86,13 +100,11 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
               }}
             >
               <TextField
-                required
                 variant="standard"
                 onBlur={(e) => emailCapture(e)}
                 placeholder="Email"
               />
               <TextField
-                required
                 variant="standard"
                 type="password"
                 onBlur={(e) => passwordCapture(e)}
@@ -124,20 +136,19 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
               }}
             >
               <TextField
-                required
                 variant="standard"
                 onBlur={(e) => emailCapture(e)}
                 placeholder="Email"
               />
               <TextField
-                required
+                error={isMatching ? false : true}
                 variant="standard"
                 type="password"
                 onBlur={(e) => passwordCapture(e)}
                 placeholder="Password"
               />
               <TextField
-                required
+                error={isMatching ? false : true}
                 variant="standard"
                 type="password"
                 onBlur={(e) => passwordsMatch(e)}
