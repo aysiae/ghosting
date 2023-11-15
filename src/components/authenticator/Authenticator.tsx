@@ -13,6 +13,7 @@ import { SignIn, SignUp, auth } from "../../utils";
 import { useAppDispatch } from "../../store/store";
 import { addUUID } from "../../store/features/userSlice";
 import { setCookie } from "../../utils";
+import { Navigate } from "react-router-dom";
 
 const inEffect = `
   @keyframes react-fade-in {
@@ -21,8 +22,6 @@ const inEffect = `
     100% { opacity: 1; }
   }
 `;
-
-//TODO: add UUID using getUUID reducer from UserSlice to set UUID, then use UUID to grab all other user details from DB
 
 export function Authenticator({ signIn }: { signIn: boolean }) {
   const [email, setEmail] = useState("");
@@ -52,6 +51,9 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
     if(auth.currentUser) {
       dispatch(addUUID(auth.currentUser.uid))
       setCookie('auth_user', auth.currentUser.uid);
+      return (
+        <Navigate to='/profiles' />
+      )
 
     }
   }
