@@ -49,6 +49,7 @@ export function Sidebar() {
         <Button>Explore</Button>
         <Button>Notifications</Button>
         <Button>Messages</Button>
+        <Button>Profiles</Button>
         <Button>Account</Button>
         <Button
           variant="contained"

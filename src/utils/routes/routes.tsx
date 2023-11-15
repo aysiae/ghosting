@@ -5,6 +5,7 @@ import App from "../../App";
 import { TimelinePage } from "../../pages/timeline/TimelinePage";
 import { CreateNewProfileLayout } from "../../layouts/createNewProfile/CreateNewProfileLayout";
 import { PrivateRoute } from "./private/privateRoute";
+import { ProfilesPage } from "../../pages/profiles/ProfilesPage";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ export const router = createBrowserRouter([
       {
         path: "",
         element: <PrivateRoute><TimelinePage /></PrivateRoute>,
+      },
+      {
+        path: "/profiles",
+        element: <PrivateRoute><ProfilesPage /></PrivateRoute>
       },
       {
         path: "dev",
