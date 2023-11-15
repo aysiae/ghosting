@@ -67,7 +67,7 @@ export function Sidebar() {
           bottom: 0,
         }}
       >
-        <Avatar>{profile.avatar}</Avatar>
+        <Avatar src={profile.avatar}>{profile.displayName}</Avatar>
         <Box
           sx={{
             display: "flex",

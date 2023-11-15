@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { BasicProfileType } from "../../types/profileTypes";
-import { p1 } from '../../mockData/MockProfilesData';
 
 export interface ActiveProfile {
   details: BasicProfileType;
@@ -15,11 +14,11 @@ export const ProfileSlice = createSlice({
   name: "ActiveProfileDetails",
   initialState,
   reducers: {
-    getProfile: (state, action: PayloadAction) => {
-      state.details = p1;
+    setProfile: (state, action: PayloadAction<BasicProfileType>) => {
+      state.details = action.payload;
     },
   },
 });
 
 export default ProfileSlice;
-export const { getProfile } = ProfileSlice.actions;
+export const { setProfile } = ProfileSlice.actions;
