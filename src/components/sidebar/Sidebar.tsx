@@ -4,10 +4,23 @@ import { useAppSelector } from "../../store/store";
 import { Link } from "react-router-dom";
 import { navbar } from "../../immutables/navbar";
 
+// not staying, here for ease of access until further developed
+import { SignOut } from "../../utils";
+import { eraseCookie } from "../../utils";
+
 const logo = require("../../assets/ghost-2.png");
 
 export function Sidebar() {
   const profile = useAppSelector((state) => state.profile.details);
+
+
+  //NOT STAYING FOR EASE OF ACCESS
+  const handleSignOut = () => {
+    SignOut();
+    eraseCookie('auth_user');
+    eraseCookie('active_profile');
+    window.location.reload();
+  }
 
   return (
     <Box
@@ -52,6 +65,7 @@ export function Sidebar() {
             <Button sx={{width: '100%'}}>{item.title}</Button>
           </Link>
         ))}
+        <Button onClick={(e) => handleSignOut()}>Sign Out</Button>
         <Button
           variant="contained"
           sx={{ borderRadius: "25px", width: "80%", ml: 4 }}
