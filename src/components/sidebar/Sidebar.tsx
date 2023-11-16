@@ -2,7 +2,7 @@ import { Button, Box, Typography } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import { useAppSelector } from "../../store/store";
 import { Link } from "react-router-dom";
-import { navbar } from "../../immutables/navbarData";
+import { navbar } from "../../immutables/navbar";
 
 const logo = require("../../assets/ghost-2.png");
 
