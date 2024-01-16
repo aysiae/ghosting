@@ -38,15 +38,11 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
   };
 
   const passwordsMatch = (e: any) => {
-    if (password === e.target.value) {
-      setIsMatching(true);
-    } else {
-      setIsMatching(false);
-    }
+    setIsMatching(password === e.target.value)
   };
 
   const authenticateUser = () => {
-    if(auth.currentUser) {
+    if (auth.currentUser) {
       dispatch(setUUID(auth.currentUser.uid))
     }
   }
@@ -116,7 +112,7 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
                 variant="contained"
                 onClick={(e) => launchSignIn()}
                 sx={{ marginTop: "2em" }}
-                disabled={email && password ? false : true}
+                disabled={!(email && password)}
               >
                 Sign In!
               </Button>
@@ -149,14 +145,15 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
                 onBlur={(e) => passwordsMatch(e)}
                 placeholder="Retype Password"
               />
-              {isMatching ? null : (
+              {!isMatching ? (
                 <p style={{ color: "red" }}>Passwords don't match.</p>
-              )}
+              ) :
+              null }
               <Button
                 variant="contained"
                 onClick={(e) => launchSignUp()}
                 sx={{ marginTop: "2em" }}
-                disabled={email && password && isMatching ? false : true}
+                disabled={!(email && password && isMatching)}
               >
                 Sign Up!
               </Button>

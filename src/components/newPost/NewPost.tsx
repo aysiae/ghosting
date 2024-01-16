@@ -25,7 +25,7 @@ export function NewPost() {
           fullWidth
           multiline
           rows={3}
-          placeholder={"Whatcha thinking?!"}
+          placeholder="Whatcha thinking?!"
         />
         <Button
           variant="contained"
