@@ -1,6 +1,6 @@
-import { NavBarType } from "../types/navBarType"
+import { NaviType } from "../types/naviType"
 
-export const navbar: NavBarType = {
+export const navigation: NaviType = {
     home: 
 
         {

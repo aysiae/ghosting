@@ -2,7 +2,7 @@ import { Button, Box, Typography } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import { useAppSelector } from "../../store/store";
 import { Link } from "react-router-dom";
-import { navbar } from "../../immutables/navbar";
+import { navigation } from "../../immutables/navigation";
 
 // not staying, here for ease of access until further developed
 import { SignOut } from "../../utils";
@@ -13,7 +13,7 @@ const logo = require("../../assets/ghost-2.png");
 
 export function Sidebar() {
   const profile = useAppSelector((state) => state.profile.details);
-  const sidebar: RouteType[] = Object.values(navbar);
+  const sidebar: RouteType[] = Object.values(navigation);
 
 
   //NOT STAYING FOR EASE OF ACCESS
