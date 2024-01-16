@@ -1,28 +1,39 @@
-import { NavBarType } from "../types/navBarTypes";
+import { NavBarType } from "../types/navBarType"
 
-export const navbar: NavBarType[] = [
-    {
-        title: 'Home',
-        route: '',
-    },
+export const navbar: NavBarType = {
+    home: 
+
+        {
+            title: 'Home',
+            path: '',
+        },
+    explore:
     {
         title: 'Explore',
-        route: '',
+        path: '',
     },
+    notifs:
     {
         title: 'Notifications',
-        route: '',
+        path: '',
     },
+    messages:
     {
         title: 'Messages',
-        route: '',
+        path: '',
     },
+    profiles:
     {
         title: 'Profiles',
-        route: '/profiles'
+        path: 'profiles'
     },
+    account:
     {
         title: 'Account',
-        route: ''
+        path: ''
     },
-]
+    activeProfile: {
+        title: 'Active Profile',
+        path: ''
+    }
+}

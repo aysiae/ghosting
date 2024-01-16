@@ -7,11 +7,13 @@ import { navbar } from "../../immutables/navbar";
 // not staying, here for ease of access until further developed
 import { SignOut } from "../../utils";
 import { eraseCookie } from "../../utils";
+import { RouteType } from "../../types/routeType";
 
 const logo = require("../../assets/ghost-2.png");
 
 export function Sidebar() {
   const profile = useAppSelector((state) => state.profile.details);
+  const sidebar: RouteType[] = Object.values(navbar);
 
 
   //NOT STAYING FOR EASE OF ACCESS
@@ -60,8 +62,8 @@ export function Sidebar() {
           flexDirection: "column",
         }}
       >
-        {navbar.map((item) => (
-          <Link style={{width: '100%'}} to={item.route}>
+        {sidebar.map((item) => (
+          <Link style={{width: '100%'}} to={item.path}>
             <Button sx={{width: '100%'}}>{item.title}</Button>
           </Link>
         ))}

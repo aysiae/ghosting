@@ -1,11 +1,12 @@
 // import type { RouteObject } from 'react-router';
 import { createBrowserRouter } from "react-router-dom";
-
-import App from "../../App";
 import { TimelinePage } from "../../pages/timeline/TimelinePage";
 import { CreateNewProfileLayout } from "../../layouts/createNewProfile/CreateNewProfileLayout";
 import { PrivateRoute } from "./private/privateRoute";
 import { ProfilesPage } from "../../pages/profiles/ProfilesPage";
+
+import App from "../../App";
+
 
 export const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
         element: <PrivateRoute><TimelinePage /></PrivateRoute>,
       },
       {
-        path: "/profiles",
+        path: "profiles",
         element: <PrivateRoute><ProfilesPage /></PrivateRoute>
       },
       {
