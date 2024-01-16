@@ -15,14 +15,13 @@ export function Sidebar() {
   const profile = useAppSelector((state) => state.profile.details);
   const sidebar: RouteType[] = Object.values(navigation);
 
-
   //NOT STAYING FOR EASE OF ACCESS
   const handleSignOut = () => {
     SignOut();
-    eraseCookie('auth_user');
-    eraseCookie('active_profile');
+    eraseCookie("auth_user");
+    eraseCookie("active_profile");
     window.location.reload();
-  }
+  };
 
   return (
     <Box
@@ -63,8 +62,8 @@ export function Sidebar() {
         }}
       >
         {sidebar.map((item) => (
-          <Link style={{width: '100%'}} to={item.path}>
-            <Button sx={{width: '100%'}}>{item.title}</Button>
+          <Link style={{ width: "100%" }} to={item.path}>
+            <Button sx={{ width: "100%" }}>{item.title}</Button>
           </Link>
         ))}
         <Button onClick={(e) => handleSignOut()}>Sign Out</Button>

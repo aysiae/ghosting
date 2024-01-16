@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 
-
 import { SignIn, SignUp, auth } from "../../utils";
 import { useAppDispatch } from "../../store/store";
 import { setUUID } from "../../store/features/userSlice";
@@ -38,14 +37,14 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
   };
 
   const passwordsMatch = (e: any) => {
-    setIsMatching(password === e.target.value)
+    setIsMatching(password === e.target.value);
   };
 
   const authenticateUser = () => {
     if (auth.currentUser) {
-      dispatch(setUUID(auth.currentUser.uid))
+      dispatch(setUUID(auth.currentUser.uid));
     }
-  }
+  };
 
   const launchSignIn = async () => {
     await SignIn(email, password);
@@ -147,8 +146,7 @@ export function Authenticator({ signIn }: { signIn: boolean }) {
               />
               {!isMatching ? (
                 <p style={{ color: "red" }}>Passwords don't match.</p>
-              ) :
-              null }
+              ) : null}
               <Button
                 variant="contained"
                 onClick={(e) => launchSignUp()}

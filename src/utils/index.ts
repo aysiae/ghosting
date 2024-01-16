@@ -1,5 +1,5 @@
-export * from './auth/signIn'
-export * from './auth/signOut'
-export * from './auth/signUp'
-export { auth } from './firebase/firebase';
-export * from './cookies/cookies';
+export * from "./auth/signIn";
+export * from "./auth/signOut";
+export * from "./auth/signUp";
+export { auth } from "./firebase/firebase";
+export * from "./cookies/cookies";

@@ -6,12 +6,12 @@ import { Navigate } from "react-router-dom";
 import { navigation } from "../../immutables/navigation";
 
 export function TimelinePage() {
-  const activeProfile = useAppSelector((state) => state.profile.details.username);
-  
+  const activeProfile = useAppSelector(
+    (state) => state.profile.details.username,
+  );
 
-  if(!activeProfile) { 
-    return <Navigate to={navigation.profiles.path} />
-    
+  if (!activeProfile) {
+    return <Navigate to={navigation.profiles.path} />;
   }
 
   return (

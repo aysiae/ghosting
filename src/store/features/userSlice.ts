@@ -9,7 +9,7 @@ export interface User {
 
 // UPDATE THIS
 const initialState: User = {
-  details: {uuid: getCookie('auth_user')},
+  details: { uuid: getCookie("auth_user") },
 };
 
 export const UserSlice = createSlice({
@@ -21,8 +21,8 @@ export const UserSlice = createSlice({
     },
     setUUID: (state, action: PayloadAction<string>) => {
       state.details.uuid = action.payload;
-      setCookie('auth_user', action.payload);
-    }
+      setCookie("auth_user", action.payload);
+    },
   },
 });
 

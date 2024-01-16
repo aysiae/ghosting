@@ -3,8 +3,10 @@ import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
 export function CreateProfile() {
   return (
     <Box>
-      <Typography sx={{textAlign: 'center', mb: 2 }}>JUST A FEW QUICK DETAILS</Typography>
-      <FormControl sx={{width: '100%'}}>
+      <Typography sx={{ textAlign: "center", mb: 2 }}>
+        JUST A FEW QUICK DETAILS
+      </Typography>
+      <FormControl sx={{ width: "100%" }}>
         <TextField
           sx={{ mb: 2 }}
           variant="standard"

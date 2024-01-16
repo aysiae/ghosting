@@ -7,7 +7,6 @@ import { ProfilesPage } from "../../pages/profiles/ProfilesPage";
 
 import App from "../../App";
 
-
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -15,11 +14,19 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <PrivateRoute><TimelinePage /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <TimelinePage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "profiles",
-        element: <PrivateRoute><ProfilesPage /></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <ProfilesPage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "dev",

@@ -2,8 +2,6 @@ import { Avatar, Box, Typography } from "@mui/material";
 import { PostType } from "../../types/postTypes";
 import { HeartIcon, ReplyIcon, RepostIcon } from "../../assets/icons/postIcons";
 
-
-
 type PostProps = {
   post: PostType;
 };
