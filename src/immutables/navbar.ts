@@ -23,6 +23,6 @@ export const navbar: NavBarType[] = [
     },
     {
         title: 'Account',
-        route: '/'
+        route: ''
     },
 ]
