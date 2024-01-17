@@ -1,7 +1,6 @@
 export type UserType = {
-    signedIn: boolean,
-    displayName?: string,
-    userName?: string,
-    birthDate?: string,
-    avatar?: string,
-}
+  uuid: string;
+  displayName?: string;
+  birthDate?: string;
+  avatar?: string;
+};

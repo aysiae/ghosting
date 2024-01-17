@@ -1,13 +1,18 @@
-import React from 'react';
-// import { TimelinePage } from './pages/timeline/TimelinePage';
-import { LandingPage } from './pages/landing/LandingPage';
-import { Provider } from 'react-redux';
-import { store } from './store/store';
+import React from "react";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+import { Outlet } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material";
+import { themeOptions } from "./theme/theme";
+
+const theme = createTheme(themeOptions);
 
 function App() {
   return (
     <Provider store={store}>
-          <LandingPage />
+      <ThemeProvider theme={theme}>
+        <Outlet />
+      </ThemeProvider>
     </Provider>
   );
 }
